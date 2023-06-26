@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Conference</h1>
+  
+<table border="solid">
+  <tr><th>ID</th>
+  <TH>Name</TH>
+  <th>Category</th>
+  <th>Date</th>
+  <TH>Venue</TH>
+<th>Theme</th></tr>
+  {% for x in mymembers %}
+  <tr><td>{{x.id}}</td>
+    <td>{{ x.Name }}</td> 
+    <td>{{ x.Category }}</td> 
+    <td>{{ x.Date }}</td> 
+    <td>{{ x.Venue }}</td> 
+    <td>{{ x.Theme }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<ul>
+  {% for x in mymembers %}
+    <li><a href="details/{{ x.id }}">{{ x.Name }} {{ x.Date }}</a></li>
+  {% endfor %}
+</ul>
+<a href="/add_conf"> Go to Add</a>
+</body>
+</html>
